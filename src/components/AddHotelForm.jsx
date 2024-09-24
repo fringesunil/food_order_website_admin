@@ -20,7 +20,7 @@ export default function AddHotelForm() {
     if (data.image[0]) {
       formData.append("image", data.image[0])
     }
-    axios.post(`http://localhost:3000/restaurants`,formData).then(response=>{
+    axios.post(`${import.meta.env.VITE_BASE_URL}/restaurants`,formData).then(response=>{
         navigate(`/home/hotels`)
       }).catch(error=>console.log(error))
   }

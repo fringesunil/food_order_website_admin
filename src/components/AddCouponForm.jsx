@@ -18,7 +18,7 @@ export default function AddCouponForm() {
         ...data,
         discount_percentage: parseInt(data.discount_percentage, 10),
       };
-      axios.post(`http://localhost:3000/coupon`,formattedData).then(response=>{
+      axios.post(`${import.meta.env.VITE_BASE_URL}/coupon`,formattedData).then(response=>{
         navigate(`/home/coupons`)
       }).catch(error=>console.log(error))
   }

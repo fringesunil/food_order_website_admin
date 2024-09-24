@@ -4,7 +4,7 @@ import CouponCard from '../components/CouponCard';
 import axios from 'axios';
 
 export async function loader() {
-    const response = await axios.get(`http://localhost:3000/coupon`)
+    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/coupon`)
     const coupons = response.data
      return { coupons };
    }

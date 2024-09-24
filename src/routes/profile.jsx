@@ -4,7 +4,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 export async function loader() {
   const userId = localStorage.getItem('userId');
-  const response = await axios.get(`http://localhost:3000/user/${userId}`);
+  const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user/${userId}`);
   const user = response.data;
   return { user };
 }
@@ -27,7 +27,7 @@ export default function Profile() {
       
       try {
         const userId = localStorage.getItem('userId');
-        const response = await axios.patch(`http://localhost:3000/user/${userId}`, formData);
+        const response = await axios.patch(`${import.meta.env.VITE_BASE_URL}/user/${userId}`, formData);
         
         const newImageUrl = response.data.imageUrl;
         setProfileImage(newImageUrl); 
@@ -39,7 +39,7 @@ export default function Profile() {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3000/auth/logout');
+      await axios.post('${import.meta.env.VITE_BASE_URL}/auth/logout');
       localStorage.removeItem('userId');
       navigate('/');
     } catch (error) {

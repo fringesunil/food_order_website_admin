@@ -13,7 +13,7 @@ export default function LoginForm() {
 
   const navigate = useNavigate()
   const onSubmit = (data) => {
-    axios.post(`http://localhost:3000/auth/login`,data,{ withCredentials: true}).then(response=>{
+    axios.post(`${import.meta.env.VITE_BASE_URL}/auth/login`,data,{ withCredentials: true}).then(response=>{
       if(response.data.data.role ==="admin"){
         localStorage.setItem('userId', response.data.data._id);
         localStorage.setItem('userName', response.data.data.name);

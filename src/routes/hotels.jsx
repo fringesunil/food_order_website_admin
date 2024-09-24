@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 export async function loader() {
- const response = await axios.get(`http://localhost:3000/restaurants`)
+ const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/restaurants`)
  const hotels = response.data
   return { hotels };
 }

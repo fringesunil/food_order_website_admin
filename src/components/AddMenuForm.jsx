@@ -22,7 +22,7 @@ export default function AddMenuForm(props) {
     if (data.image[0]) {
       formData.append("image", data.image[0])
     }
-    axios.post(`http://localhost:3000/menu`,formData).then(response=>{
+    axios.post(`${import.meta.env.VITE_BASE_URL}/menu`,formData).then(response=>{
         alert('Item added Sucessfully');
        navigate(`/home/hotels`)
       }).catch(error=>console.log(error))
