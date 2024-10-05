@@ -22,16 +22,16 @@ function Menu() {
   }, [hotel]);
   
   return (
-    <main className='bg-[#B0A1BA] h-screen'>
+    <main className='bg-[#B0A1BA] min-h-screen'>
       <section className='py-2 px-2'>
       <div className='flex justify-between pb-6'>
-   <h1 className='px-2 py-2'>Menu</h1>
+   <h1 className='text-3xl font-bold text-white'>Menu</h1>
    <button className='w-[10rem] bg-blue-500 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'>
    <Link 
               to={{
                 pathname: `/home/menu/add`,
               }} 
-              state={{ hotelId: hotel?._id }} // Passing hotel._id via state
+              state={{ hotelId: hotel?._id }} 
             >
     Add New Menu
     </Link>

@@ -4,7 +4,7 @@ import AddressCart from '../components/AddressCard';
 
 export default function Address() {
   return (
-    <main className='bg-[#B0A1BA] h-screen'>
+    <main className='bg-[#B0A1BA] min-h-screen'>
       <AddressCart/>
      
   </main>

@@ -7,8 +7,8 @@ function AddMenu() {
     const location = useLocation();
     const { hotelId } = location.state || {};
     return (
-        <main className='bg-[#B0A1BA] h-screen'>
-        <h1>ADD Menu</h1>
+        <main className='bg-[#B0A1BA] min-h-screen'>
+        <h1 className='text-3xl font-bold text-white px-[9rem] pb-3'>Add Menu</h1>
         <AddMenuForm hotelid={hotelId}/>
     </main>
     );

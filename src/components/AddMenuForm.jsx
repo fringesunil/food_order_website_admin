@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom"
 
 
 export default function AddMenuForm(props) {
-    console.log(`HOTEL ID8888=======>${props.hotelid}`)
     const navigate = useNavigate();
   const {
     register,

@@ -16,6 +16,9 @@ import AddHotels from './routes/addHotels';
 import AddMenu from './routes/addMenu';
 import Coupons,{loader as couponLoader} from './routes/coupons';
 import AddCoupons from './routes/addCoupons';
+import EditMenu, {loader as editmenuLoader} from './routes/editMenu';
+import EditCoupon,{loader as editcouponLoader} from './routes/editCoupon';
+import EditHotel,{loader as edithotelLoader} from './routes/editHotel';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +40,11 @@ const router = createBrowserRouter([
         path: `/home/hotels/add`,
         element: <AddHotels />,
       },
-     
+      {
+        path: `/home/hotels/edit/:hotelid`,
+        element: <EditHotel />,
+        loader:edithotelLoader
+      },
       {
         path: `/home/profile`,
         element: <Profile />,
@@ -54,6 +61,12 @@ const router = createBrowserRouter([
        
       },
       {
+        path: `/home/menu/edit/:menuid`,
+        element: <EditMenu />,
+        loader:editmenuLoader
+       
+      },
+      {
         path: `/home/coupons`,
         element: <Coupons />,
         loader:couponLoader
@@ -61,6 +74,11 @@ const router = createBrowserRouter([
       {
         path: `/home/coupons/add`,
         element: <AddCoupons />,
+      },
+      {
+        path: `/home/coupons/edit/:couponid`,
+        element: <EditCoupon />,
+        loader:editcouponLoader
       },
       {
         path: `/home/profile/address`,
