@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useLoaderData } from 'react-router-dom';
-import EditMenuForm from '../components/EditMenuFOrm';
+import EditMenuForm from '../components/EditMenuForm';
 import axios from 'axios';
 
 export async function loader({ params }) {
