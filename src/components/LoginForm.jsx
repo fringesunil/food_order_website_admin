@@ -13,7 +13,7 @@ export default function LoginForm() {
 
   const onSubmit = (data) => {
     setLoading(true); // Start loader
-    
+    console.log(`URL============>${import.meta.env.VITE_BASE_URL}/auth/login`);
     axios.post(`${import.meta.env.VITE_BASE_URL}/auth/login`, data, { withCredentials: true })
       .then(response => {
         if (response.data.data.role === "admin") {
